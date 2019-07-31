@@ -1,7 +1,6 @@
 package com.coding.test;
 
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Date;
@@ -9,18 +8,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
-import javax.print.attribute.standard.DateTimeAtCompleted;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
 
 public class CalculateTransactions {
 	
 	private static final Logger log = LoggerFactory.getLogger(CalculateTransactions.class);
-	private static int windowSize = 24 ; 		// = 6 hr Size of window 
-	private static long totalAmount = 700 ; 
+	private static int windowSize = 6 ; 		// = 6 hr Size of window 
+	private static long totalAmount = 500 ; 
 
 	public List<List<Transaction>> calculate(List<Transaction> transactions){
 		transactions = sortByDateTime(transactions);
